@@ -7,7 +7,7 @@ import (
 
 func Greet(ok bool) {
 	if !ok {
-		log.Fatal("bye") // ★
+		log.Fatal("bye")
 	}
 	fmt.Println("hello")
 }
