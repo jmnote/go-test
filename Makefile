@@ -1,0 +1,2 @@
+failfast:
+	scripts/failfast.sh

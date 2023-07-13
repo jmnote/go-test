@@ -1,0 +1,7 @@
+mode: set
+github.com/jmnote/go-test/myabs/myabs.go:3.23,4.13 1 1
+github.com/jmnote/go-test/myabs/myabs.go:4.13,6.3 1 1
+github.com/jmnote/go-test/myabs/myabs.go:7.2,7.12 1 1
+github.com/jmnote/go-test/myintegration/main.go:12.13,16.16 4 1
+github.com/jmnote/go-test/myintegration/main.go:16.16,19.3 2 1
+github.com/jmnote/go-test/myintegration/main.go:20.2,20.49 1 1
