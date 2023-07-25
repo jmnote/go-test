@@ -13,25 +13,27 @@ func ExampleHello_fail() {
 	// Output: foo
 }
 
-func ExampleSalutations() {
-	Salutations()
+func ExampleHelloBye() {
+	HelloBye()
 	// Output:
 	// hello
-	// goodbye
+	// bye
 }
 
-func ExampleSalutations_fail() {
-	Salutations()
+func ExampleHelloBye_fail() {
+	HelloBye()
 	// Output:
 	// foo
-	// goodbye
+	// bye
 }
 
 func ExampleShuffle() {
-	for _, value := range Shuffle([]int{1, 2, 3, 4, 5}) {
+	nums := Shuffle([]int{1, 2, 3, 4, 5})
+	for _, value := range nums {
 		fmt.Println(value)
 	}
-	// Unordered output: 5
+	// Unordered output:
+	// 5
 	// 3
 	// 2
 	// 4

@@ -8,7 +8,8 @@ import (
 )
 
 func TestGet(t *testing.T) {
-	wantWords := []string{"Responsive is better than fast.",
+	wantWords := []string{
+		"Responsive is better than fast.",
 		"It’s not fully shipped until it’s fast.",
 		"Anything added dilutes everything else.",
 		"Practicality beats purity.",
@@ -21,7 +22,8 @@ func TestGet(t *testing.T) {
 		"Favor focus over features.",
 		"Avoid administrative distraction.",
 		"Design for failure.",
-		"Keep it logically awesome."}
+		"Keep it logically awesome.",
+	}
 	for i := 0; i < 100; i++ {
 		code, body, err := Get("https://api.github.com/octocat")
 		assert.NoError(t, err)

@@ -10,9 +10,9 @@ func Hello() {
 	fmt.Println("hello")
 }
 
-func Salutations() {
+func HelloBye() {
 	fmt.Println("hello")
-	fmt.Println("goodbye")
+	fmt.Println("bye")
 }
 
 func Shuffle(nums []int) []int {
