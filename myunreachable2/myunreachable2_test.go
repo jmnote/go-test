@@ -38,9 +38,9 @@ func TestConvert_error(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		t.Run("", func(t *testing.T) {
-			bytes, err := JSONString(tc.data)
+			str, err := JSONString(tc.data)
 			assert.EqualError(t, err, tc.wantError)
-			assert.Equal(t, "", bytes)
+			assert.Equal(t, "", str)
 		})
 	}
 	jsonMarshal = json.Marshal

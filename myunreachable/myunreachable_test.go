@@ -16,9 +16,9 @@ func TestJSONString(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		t.Run("", func(t *testing.T) {
-			bytes, err := JSONString(tc.data)
+			str, err := JSONString(tc.data)
 			assert.NoError(t, err)
-			assert.Equal(t, tc.want, bytes)
+			assert.Equal(t, tc.want, str)
 		})
 	}
 }
