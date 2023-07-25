@@ -19,7 +19,7 @@ func TestToNumber(t *testing.T) {
 			t.Run("", func(t *testing.T) {
 				got, err := ToNumber(tc.input)
 				assert.NoError(t, err)
-				assert.Equal(t, got, tc.want)
+				assert.Equal(t, tc.want, got)
 			})
 		}
 	})
@@ -36,7 +36,7 @@ func TestToNumber(t *testing.T) {
 			t.Run("", func(t *testing.T) {
 				got, err := ToNumber(tc.input)
 				assert.EqualError(t, err, tc.wantError)
-				assert.Equal(t, got, tc.want)
+				assert.Equal(t, tc.want, got)
 			})
 		}
 	})

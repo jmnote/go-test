@@ -8,10 +8,10 @@ import (
 
 func TestSquare(t *testing.T) {
 	got := Square(-2)
-	assert.Equal(t, got, 4)
+	assert.Equal(t, 4, got)
 }
 
 func TestMultiply(t *testing.T) {
 	got := multiply(-2, -2)
-	assert.Equal(t, got, 4)
+	assert.Equal(t, 4, got)
 }

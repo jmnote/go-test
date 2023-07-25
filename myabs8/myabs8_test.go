@@ -19,7 +19,7 @@ func TestAbs_1(t *testing.T) {
 	for i, tc := range testCases {
 		t.Run(fmt.Sprintf("#%d Abs(%d)", i, tc.num), func(t *testing.T) {
 			got := Abs(tc.num)
-			assert.Equal(t, got, tc.want)
+			assert.Equal(t, tc.want, got)
 		})
 	}
 }
@@ -36,7 +36,7 @@ func TestAbs_2(t *testing.T) {
 	for i, tc := range testCases {
 		t.Run(fmt.Sprintf("#%d Abs(%d)", i, tc.num), func(t *testing.T) {
 			got := Abs(tc.num)
-			assert.Equal(t, got, tc.want)
+			assert.Equal(t, tc.want, got)
 		})
 	}
 }

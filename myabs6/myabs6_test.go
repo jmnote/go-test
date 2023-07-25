@@ -52,7 +52,7 @@ func TestAbs_slice(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
 			got := Abs(tc.num)
-			assert.Equal(t, got, tc.want)
+			assert.Equal(t, tc.want, got)
 		})
 	}
 }
@@ -69,7 +69,7 @@ func TestAbs_map(t *testing.T) {
 	for name, tc := range testCases {
 		t.Run(name, func(t *testing.T) {
 			got := Abs(tc.num)
-			assert.Equal(t, got, tc.want)
+			assert.Equal(t, tc.want, got)
 		})
 	}
 }
@@ -86,7 +86,7 @@ func TestAbs_style1(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run("", func(t *testing.T) {
 			got := Abs(tc.num)
-			assert.Equal(t, got, tc.want)
+			assert.Equal(t, tc.want, got)
 		})
 	}
 }
@@ -103,7 +103,7 @@ func TestAbs_style2(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run("hello", func(t *testing.T) {
 			got := Abs(tc.num)
-			assert.Equal(t, got, tc.want)
+			assert.Equal(t, tc.want, got)
 		})
 	}
 }
@@ -121,7 +121,7 @@ func TestAbs_style3(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
 			got := Abs(tc.num)
-			assert.Equal(t, got, tc.want)
+			assert.Equal(t, tc.want, got)
 		})
 	}
 }
@@ -138,7 +138,7 @@ func TestAbs_style4(t *testing.T) {
 	for i, tc := range testCases {
 		t.Run(fmt.Sprintf("#%d Abs(%d)", i, tc.num), func(t *testing.T) {
 			got := Abs(tc.num)
-			assert.Equal(t, got, tc.want)
+			assert.Equal(t, tc.want, got)
 		})
 	}
 }

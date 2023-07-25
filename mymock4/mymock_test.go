@@ -44,7 +44,7 @@ func TestGet(t *testing.T) {
 			} else {
 				assert.EqualError(t, err, tc.wantError)
 			}
-			assert.Equal(t, got, tc.want)
+			assert.Equal(t, tc.want, got)
 		})
 	}
 }

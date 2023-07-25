@@ -9,5 +9,5 @@ import (
 
 func TestAbs(t *testing.T) {
 	got := Abs(-2)
-	assert.Equal(t, got, 1)
+	assert.Equal(t, 1, got)
 }

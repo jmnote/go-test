@@ -20,7 +20,7 @@ func TestToNumber(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run("", func(t *testing.T) {
 			got, err := ToNumber(tc.str)
-			assert.Equal(t, got, tc.want)
+			assert.Equal(t, tc.want, got)
 			if tc.wantError == "" {
 				assert.NoError(t, err)
 			} else {
@@ -45,11 +45,11 @@ func Test_toNumber(t *testing.T) {
 		t.Run("", func(t *testing.T) {
 			if tc.wantPanic == "" {
 				got := toNumber(tc.str)
-				assert.Equal(t, got, tc.want)
+				assert.Equal(t, tc.want, got)
 			} else {
 				assert.PanicsWithError(t, tc.wantPanic, func() {
 					got := toNumber(tc.str)
-					assert.Equal(t, got, tc.want)
+					assert.Equal(t, tc.want, got)
 				})
 			}
 		})

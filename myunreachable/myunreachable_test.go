@@ -11,7 +11,6 @@ func TestJSONString(t *testing.T) {
 		data Data
 		want string
 	}{
-		{(Data)nil, `{"message":""}`},
 		{Data{}, `{"message":""}`},
 		{Data{Message: "hello"}, `{"message":"hello"}`},
 	}

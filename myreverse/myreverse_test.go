@@ -8,24 +8,24 @@ import (
 
 func TestReverse_1(t *testing.T) {
 	got := Reverse("hello")
-	assert.Equal(t, got, "olleh")
+	assert.Equal(t, "olleh", got)
 }
 
 func TestReverse_2(t *testing.T) {
 	got := Reverse("foo")
-	assert.Equal(t, got, "oof")
+	assert.Equal(t, "oof", got)
 }
 
 func TestReverseParallel_1(t *testing.T) {
 	t.Parallel()
 	got := Reverse("hello")
-	assert.Equal(t, got, "olleh")
+	assert.Equal(t, "olleh", got)
 }
 
 func TestReverseParallel_2(t *testing.T) {
 	t.Parallel()
 	got := Reverse("foo")
-	assert.Equal(t, got, "oof")
+	assert.Equal(t, "oof", got)
 }
 
 func TestReverse(t *testing.T) {
@@ -38,10 +38,10 @@ func TestReverse(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		tc := tc // capture range variable
-		t.Run(tc.want, func(t *testing.T) {
+		t.Run(tc.input, func(t *testing.T) {
 			got := Reverse(tc.input)
-			t.Log(tc.input)
-			assert.Equal(t, got, tc.input)
+			t.Log(got)
+			assert.Equal(t, tc.want, got)
 		})
 	}
 }
@@ -59,7 +59,7 @@ func TestReverseParallel(t *testing.T) {
 		t.Run(tc.input, func(t *testing.T) {
 			t.Parallel()
 			got := Reverse(tc.input)
-			assert.Equal(t, got, tc.want)
+			assert.Equal(t, tc.want, got)
 		})
 	}
 }

@@ -33,8 +33,8 @@ func TestRandBetween_3(t *testing.T) {
 			min = got
 		}
 	}
-	assert.Equal(t, min, 1)
-	assert.Equal(t, max, 6)
+	assert.Equal(t, 1, min)
+	assert.Equal(t, 6, max)
 }
 
 func TestDice(t *testing.T) {
@@ -64,8 +64,8 @@ func TestDice_3(t *testing.T) {
 			min = got
 		}
 	}
-	assert.Equal(t, min, 1)
-	assert.Equal(t, max, 6)
+	assert.Equal(t, 1, min)
+	assert.Equal(t, 6, max)
 }
 
 func TestShuffle(t *testing.T) {
