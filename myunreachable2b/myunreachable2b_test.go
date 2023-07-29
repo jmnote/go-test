@@ -1,7 +1,6 @@
-package myunreachable2
+package myunreachable2b
 
 import (
-	"encoding/json"
 	"errors"
 	"testing"
 
@@ -18,7 +17,7 @@ func TestJSONString_ok(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		t.Run("", func(t *testing.T) {
-			bytes, err := JSONString(tc.data)
+			bytes, err := JSONString(tc.data, nil)
 			assert.NoError(t, err)
 			assert.Equal(t, tc.want, bytes)
 		})
@@ -26,22 +25,18 @@ func TestJSONString_ok(t *testing.T) {
 }
 
 func TestJSONString_error(t *testing.T) {
-	jsonMarshal = func(v any) ([]byte, error) {
-		return []byte{}, errors.New("fake")
-	}
 	testCases := []struct {
 		data      Data
 		wantError string
 	}{
-		{Data{}, "fake"},
-		{Data{Message: "hello"}, "fake"},
+		{Data{}, "marshal err: <nil> (fake)"},
+		{Data{Message: "hello"}, "marshal err: <nil> (fake)"},
 	}
 	for _, tc := range testCases {
 		t.Run("", func(t *testing.T) {
-			str, err := JSONString(tc.data)
+			str, err := JSONString(tc.data, errors.New("fake"))
 			assert.EqualError(t, err, tc.wantError)
 			assert.Equal(t, "", str)
 		})
 	}
-	jsonMarshal = json.Marshal
 }

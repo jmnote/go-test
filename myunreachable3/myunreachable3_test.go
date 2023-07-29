@@ -17,7 +17,7 @@ func TestGreet_hello(t *testing.T) {
 	})
 	assert.Equal(t, "hello\n", stdout)
 	assert.Regexp(t, "", stderr)
-	assert.Nil(t, err)
+	assert.NoError(t, err)
 }
 
 func TestGreet_bye(t *testing.T) {
