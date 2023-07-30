@@ -34,9 +34,9 @@ func TestJSONString_error(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		t.Run("", func(t *testing.T) {
-			str, err := JSONString(tc.data, errors.New("fake"))
+			got, err := JSONString(tc.data, errors.New("fake"))
 			assert.EqualError(t, err, tc.wantError)
-			assert.Equal(t, "", str)
+			assert.Equal(t, "", got)
 		})
 	}
 }

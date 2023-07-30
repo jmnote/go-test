@@ -16,7 +16,7 @@ func TestGreet_hello(t *testing.T) {
 		Greet(true)
 	})
 	assert.Equal(t, "hello\n", stdout)
-	assert.Regexp(t, "", stderr)
+	assert.Equal(t, "", stderr)
 	assert.NoError(t, err)
 }
 
@@ -26,6 +26,6 @@ func TestGreet_bye(t *testing.T) {
 	})
 	assert.Equal(t, "", stdout)
 	// 2023/07/13 22:13:07 bye
-	assert.Regexp(t, ` bye\n$`, stderr)
-	assert.Error(t, err, "exit status 1")
+	assert.Regexp(t, `^[0-9:/ ]+ bye\n$`, stderr)
+	assert.EqualError(t, err, "exit status 1")
 }
