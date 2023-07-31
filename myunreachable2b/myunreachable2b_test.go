@@ -17,7 +17,7 @@ func TestJSONString_ok(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		t.Run("", func(t *testing.T) {
-			bytes, err := JSONString(tc.data, nil)
+			bytes, err := JSONString(tc.data)
 			assert.NoError(t, err)
 			assert.Equal(t, tc.want, bytes)
 		})
@@ -25,6 +25,7 @@ func TestJSONString_ok(t *testing.T) {
 }
 
 func TestJSONString_error(t *testing.T) {
+	fakeErr = errors.New("fake")
 	testCases := []struct {
 		data      Data
 		wantError string
@@ -34,9 +35,10 @@ func TestJSONString_error(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		t.Run("", func(t *testing.T) {
-			got, err := JSONString(tc.data, errors.New("fake"))
+			got, err := JSONString(tc.data)
 			assert.EqualError(t, err, tc.wantError)
 			assert.Equal(t, "", got)
 		})
 	}
+	fakeErr = nil
 }

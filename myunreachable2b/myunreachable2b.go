@@ -9,10 +9,12 @@ type Data struct {
 	Message string `json:"message"`
 }
 
-func JSONString(data Data, fakeErr error) (string, error) {
+var fakeErr error = nil
+
+func JSONString(data Data) (string, error) {
 	bytes, err := json.Marshal(data)
 	if err != nil || fakeErr != nil {
-		return "", fmt.Errorf("marshal err: %v (%s)", err, fakeErr)
+		return "", fmt.Errorf("marshal err: %v (%v)", err, fakeErr)
 	}
 	return string(bytes), nil
 }
