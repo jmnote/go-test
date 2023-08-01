@@ -14,7 +14,7 @@ func main() {
 	flag.Parse()
 	num, err := strconv.Atoi(*numPtr)
 	if err != nil {
-		fmt.Printf("error: %s is not integer\n", *numPtr)
+		fmt.Printf("error: %s is not int\n", *numPtr)
 		os.Exit(1)
 	}
 	fmt.Printf("Abs(%d)=%d\n", num, myabs.Abs(num))

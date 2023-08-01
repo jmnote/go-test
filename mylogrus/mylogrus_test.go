@@ -6,8 +6,8 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestLogHello(t *testing.T) {
-	got := LogHello()
+func TestLogString(t *testing.T) {
+	got := LogString("Hello")
 	t.Log(got)
 	assert.Contains(t, got, "level=info msg=Hello")
 	assert.Regexp(t, `time="[^"]+" level=info msg=Hello`, got)

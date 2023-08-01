@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestToNumber(t *testing.T) {
+func TestToInt(t *testing.T) {
 	t.Run("ok", func(t *testing.T) {
 		testCases := []struct {
 			input string
@@ -17,7 +17,7 @@ func TestToNumber(t *testing.T) {
 		}
 		for _, tc := range testCases {
 			t.Run("", func(t *testing.T) {
-				got, err := ToNumber(tc.input)
+				got, err := ToInt(tc.input)
 				assert.NoError(t, err)
 				assert.Equal(t, tc.want, got)
 			})
@@ -29,12 +29,12 @@ func TestToNumber(t *testing.T) {
 			want      int
 			wantError string
 		}{
-			{"", 0, `strconv.Atoi: parsing "": invalid syntax`},
-			{"a", 0, `strconv.Atoi: parsing "a": invalid syntax`},
+			{"", 0, "not int"},
+			{"a", 0, "not int"},
 		}
 		for _, tc := range testCases {
 			t.Run("", func(t *testing.T) {
-				got, err := ToNumber(tc.input)
+				got, err := ToInt(tc.input)
 				assert.EqualError(t, err, tc.wantError)
 				assert.Equal(t, tc.want, got)
 			})

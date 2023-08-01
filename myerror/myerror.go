@@ -1,8 +1,14 @@
 package myerror
 
-import "strconv"
+import (
+	"errors"
+	"strconv"
+)
 
-func ToNumber(str string) (int, error) {
-	v, err := strconv.Atoi(str)
-	return v, err
+func ToInt(str string) (int, error) {
+	num, err := strconv.Atoi(str)
+	if err != nil {
+		return 0, errors.New("not int")
+	}
+	return num, nil
 }

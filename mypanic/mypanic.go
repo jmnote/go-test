@@ -6,16 +6,16 @@ import (
 	"strconv"
 )
 
-func ToNumber(str string) (v int, err error) {
+func ToInt(str string) (v int, err error) {
 	defer myRecover(str, &err)
-	v = toNumber(str)
+	v = toInt(str)
 	return v, nil
 }
 
-func toNumber(str string) int {
+func toInt(str string) int {
 	v, err := strconv.Atoi(str)
 	if err != nil {
-		panic(errors.New("not number"))
+		panic(errors.New("not int"))
 	}
 	return v
 }

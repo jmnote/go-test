@@ -6,10 +6,10 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-func LogHello() string {
+func LogString(str string) string {
 	var buffer bytes.Buffer
 	logger := logrus.New()
 	logger.Out = &buffer
-	logger.Info("Hello")
+	logger.Info(str)
 	return buffer.String()
 }
