@@ -12,7 +12,7 @@ func TestJSONString(t *testing.T) {
 		want string
 	}{
 		{Data{}, `{"message":""}`},
-		{Data{Message: "hello"}, `{"message":"hello"}`},
+		{Data{Message: "foo"}, `{"message":"foo"}`},
 	}
 	for _, tc := range testCases {
 		t.Run("", func(t *testing.T) {

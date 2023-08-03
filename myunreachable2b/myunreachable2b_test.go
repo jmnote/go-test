@@ -1,7 +1,6 @@
 package myunreachable2b
 
 import (
-	"errors"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -13,7 +12,7 @@ func TestJSONString_ok(t *testing.T) {
 		want string
 	}{
 		{Data{}, `{"message":""}`},
-		{Data{Message: "hello"}, `{"message":"hello"}`},
+		{Data{Message: "foo"}, `{"message":"foo"}`},
 	}
 	for _, tc := range testCases {
 		t.Run("", func(t *testing.T) {
@@ -25,13 +24,13 @@ func TestJSONString_ok(t *testing.T) {
 }
 
 func TestJSONString_error(t *testing.T) {
-	fakeErr = errors.New("fake")
+	fakeErr = true
 	testCases := []struct {
 		data      Data
 		wantError string
 	}{
-		{Data{}, "marshal err: <nil> (fake)"},
-		{Data{Message: "hello"}, "marshal err: <nil> (fake)"},
+		{Data{}, "marshal err: <nil>"},
+		{Data{Message: "hello"}, "marshal err: <nil>"},
 	}
 	for _, tc := range testCases {
 		t.Run("", func(t *testing.T) {
@@ -40,5 +39,5 @@ func TestJSONString_error(t *testing.T) {
 			assert.Equal(t, "", got)
 		})
 	}
-	fakeErr = nil
+	fakeErr = false
 }

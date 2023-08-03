@@ -14,7 +14,7 @@ func TestJSONString_ok(t *testing.T) {
 		want string
 	}{
 		{Data{}, `{"message":""}`},
-		{Data{Message: "hello"}, `{"message":"hello"}`},
+		{Data{Message: "foo"}, `{"message":"foo"}`},
 	}
 	for _, tc := range testCases {
 		t.Run("", func(t *testing.T) {
@@ -34,7 +34,7 @@ func TestJSONString_error(t *testing.T) {
 		wantError string
 	}{
 		{Data{}, "fake"},
-		{Data{Message: "hello"}, "fake"},
+		{Data{Message: "foo"}, "fake"},
 	}
 	for _, tc := range testCases {
 		t.Run("", func(t *testing.T) {
